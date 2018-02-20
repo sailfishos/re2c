@@ -1,0 +1,13 @@
+diff --git a/re2c/src/conf/opt.h b/re2c/src/conf/opt.h
+index f638083..d608533 100644
+--- a/re2c/src/conf/opt.h
++++ b/re2c/src/conf/opt.h
+@@ -44,7 +44,7 @@ enum target_t
+ 	CONSTOPT1 (target_t, target, TARGET_CODE) \
+ 	CONSTOPT (std::string, output_file, "") \
+ 	CONSTOPT (std::string, header_file, "") \
+-	CONSTOPT (bool, bNoGenerationDate, false) \
++	CONSTOPT (bool, bNoGenerationDate, true) \
+ 	CONSTOPT (bool, version, true) \
+ 	CONSTOPT (bool, cFlag, false) \
+ 	CONSTOPT (bool, fFlag, false) \
