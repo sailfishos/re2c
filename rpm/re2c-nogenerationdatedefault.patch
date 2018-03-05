@@ -1,7 +1,7 @@
-diff --git a/re2c/src/conf/opt.h b/re2c/src/conf/opt.h
+diff --git a/src/conf/opt.h b/src/conf/opt.h
 index f638083..d608533 100644
---- a/re2c/src/conf/opt.h
-+++ b/re2c/src/conf/opt.h
+--- a/src/conf/opt.h
++++ b/src/conf/opt.h
 @@ -44,7 +44,7 @@ enum target_t
  	CONSTOPT1 (target_t, target, TARGET_CODE) \
  	CONSTOPT (std::string, output_file, "") \

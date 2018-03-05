@@ -1,12 +1,8 @@
-#
-# spec file for package re2c
-#
-
 Name:           re2c
 Version:        1.0.3
 Release:        0
 Summary:        Tool for generating C-based recognizers from regular expressions
-License:        SUSE-Public-Domain
+License:        Public Domain
 Group:          Development/Libraries/C and C++
 Url:            http://re2c.org/
 Source:         https://github.com/skvadrik/re2c/releases/download/%{version}/%{name}-%{version}.tar.gz
@@ -22,11 +18,11 @@ applications. The generated scanners approach hand-crafted ones in
 terms of size and speed.
 
 %prep
-%setup -q -n %{name}-%{version}/%{name}
+%setup -q -n %{name}-%{version}/%{name}/%{name}
 %patch0 -p1
 
 %build
-cd re2c
+./autogen.sh
 %configure
 make %{?_smp_mflags} V=1
 
