@@ -1,30 +1,30 @@
 Name:           re2c
-Version:        1.0.3
-Release:        0
-Summary:        Tool for generating C-based recognizers from regular expressions
+Summary:        Tool for generating C, C++ recognizers from regular expressions
+Version:        2.0.3
+Release:        1
 License:        Public Domain
-Group:          Development/Libraries/C and C++
 Url:            http://re2c.org/
-Source:         https://github.com/skvadrik/re2c/releases/download/%{version}/%{name}-%{version}.tar.gz
+Source:         %{name}-%{version}.tar.bz2
 Patch0:         re2c-nogenerationdatedefault.patch
+BuildRequires:  autoconf
+BuildRequires:  libtool
 BuildRequires:  bison
 BuildRequires:  gcc-c++
 
 %description
-re2c is a tool for writing fast and flexible lexers. Unlike other such
-tools, it concentrates solely on generating efficient code for matching
-regular expressions. This makes it suitable for a wide variety of
-applications. The generated scanners approach hand-crafted ones in
-terms of size and speed.
+re2c is a tool for writing very fast and very flexible scanners. Unlike any
+other such tool, re2c focuses on generating high efficient code for regular
+expression matching. As a result this allows a much broader range of use than
+any traditional lexer offers. And Last but not least re2c generates warning
+free code that is equal to hand-written code in terms of size, speed and
+quality.
 
 %prep
-%setup -q -n %{name}-%{version}/%{name}/%{name}
-%patch0 -p1
+%autosetup -p1 -n %{name}-%{version}/%{name}
 
 %build
-./autogen.sh
-%configure
-make %{?_smp_mflags} V=1
+%reconfigure --disable-docs --disable-libs --disable-golang
+%make_build
 
 %check
 make check %{?_smp_mflags}
@@ -33,9 +33,8 @@ make check %{?_smp_mflags}
 %make_install
 
 %files
-%doc doc/*.ps doc/sample.bib
-%doc README
-%doc examples/
+%license LICENSE
+%doc README.md
 %{_bindir}/re2c
-%{_mandir}/man1/re2c.1%{ext_man}
-
+%{_datadir}/re2c/
+%{_mandir}/man1/re2c.1*
