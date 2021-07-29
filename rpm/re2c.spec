@@ -10,6 +10,7 @@ BuildRequires:  autoconf
 BuildRequires:  libtool
 BuildRequires:  bison
 BuildRequires:  gcc-c++
+BuildRequires:  libstdc++-devel
 
 %description
 re2c is a tool for writing very fast and very flexible scanners. Unlike any
