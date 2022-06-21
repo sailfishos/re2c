@@ -3,7 +3,7 @@ Summary:        Tool for generating C, C++ recognizers from regular expressions
 Version:        2.0.3
 Release:        1
 License:        Public Domain
-Url:            http://re2c.org/
+Url:            https://github.com/sailfishos/re2c
 Source:         %{name}-%{version}.tar.bz2
 Patch0:         re2c-nogenerationdatedefault.patch
 BuildRequires:  autoconf
